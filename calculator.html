@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>LumoPay EMI Calculator</title>
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div class="top-strip"></div>
+
+<div class="header">
+    EMI Estimator
+</div>
+
+<div class="card">
+
+<h3>Loan EMI Calculator</h3>
+
+<input type="number" id="amount" placeholder="Loan Amount">
+<input type="number" id="months" placeholder="Tenure (Months)">
+
+<button class="btn" onclick="calculateEMI()">
+Calculate EMI
+</button>
+
+<p id="result" style="margin-top:20px; font-weight:600;"></p>
+
+</div>
+
+<script>
+function calculateEMI() {
+    let amount = document.getElementById("amount").value;
+    let months = document.getElementById("months").value;
+
+    if(amount && months) {
+        let emi = (amount / months).toFixed(2);
+        document.getElementById("result").innerText =
+        "Estimated Monthly EMI: ₹ " + emi;
+    }
+}
+</script>
+
+<a href="calculator.html" style="display:block; margin-top:15px; font-size:13px;">
+Estimate Your EMI
+</a>
+
+
+
+</body>
+</html>

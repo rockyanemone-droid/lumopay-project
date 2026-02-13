@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>LumoPay - Application Review</title>
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div class="top-strip"></div>
+
+<div class="header">
+    Application Status
+</div>
+
+<div class="card" style="text-align:center;">
+
+<div class="badge">Under Advanced Review</div>
+
+<h2>Verification in Progress</h2>
+
+<p style="color:#555;">
+Your application is undergoing structured compliance and risk validation.
+You will be notified upon completion of assessment.
+</p>
+
+<div style="width:100%; background:#ddd; height:20px; margin-top:20px;">
+<div id="progress" style="width:0%; height:100%; background:#0aa6a6;"></div>
+</div>
+
+</div>
+
+<script>
+let width = 0;
+let bar = document.getElementById("progress");
+let interval = setInterval(function(){
+    if(width >= 100){
+    clearInterval(interval);
+    window.location.href = "final.html";
+}else {
+        width += 5;
+        bar.style.width = width + "%";
+    }
+}, 200);
+</script>
+
+</body>
+</html>

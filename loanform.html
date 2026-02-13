@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>LumoPay - Application</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<style>
+body {
+    margin: 0;
+    font-family: 'Segoe UI', Arial;
+    background: #f5f7f9;
+}
+
+.top-strip {
+    height: 6px;
+    background: linear-gradient(90deg, #0aa6a6, #c8a44d);
+}
+
+.header {
+    padding: 20px 60px;
+    font-weight: 600;
+    font-size: 22px;
+    background: white;
+}
+
+.card {
+    background: white;
+    width: 500px;
+    margin: 60px auto;
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.06);
+}
+
+input {
+    width: 100%;
+    padding: 12px;
+    margin-top: 12px;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+}
+
+.btn {
+    width: 100%;
+    padding: 14px;
+    margin-top: 25px;
+    border: none;
+    border-radius: 30px;
+    background: #0aa6a6;
+    color: white;
+    font-size: 15px;
+    cursor: pointer;
+}
+
+.btn:hover {
+    background: #088c8c;
+}
+
+.step {
+    display: none;
+}
+
+.step.active {
+    display: block;
+}
+
+.progress {
+    margin-bottom: 20px;
+    font-size: 13px;
+    color: #777;
+}
+</style>
+</head>
+
+<body>
+
+<div class="top-strip"></div>
+
+<div class="header">
+    LumoPay - Loan Application
+</div>
+
+<div class="card">
+
+<div class="progress">
+Step <span id="stepNumber">1</span> of 3
+</div>
+
+<!-- STEP 1 -->
+<div class="step active" id="step1">
+
+<h3>Basic Information</h3>
+
+<input type="text" placeholder="Full Name">
+<input type="date" placeholder="Date of Birth">
+<input type="text" placeholder="Mobile Number">
+<input type="email" placeholder="Email Address">
+
+<button class="btn" onclick="nextStep(2)">Continue</button>
+
+</div>
+
+<!-- STEP 2 -->
+<div class="step" id="step2">
+
+<h3>Identity Verification</h3>
+
+<input type="text" placeholder="PAN Number">
+<input type="text" placeholder="Aadhaar Number">
+<input type="text" placeholder="CIBIL Score">
+<input type="text" placeholder="Monthly Income">
+
+<br><br>
+
+<label style="font-size:13px;">Upload Passport Size Photo (Max 2MB)</label>
+<input type="file" id="photoUpload" onchange="validateFile(this, 'photoStatus')">
+<div id="photoStatus" style="font-size:12px;"></div>
+
+<br>
+
+<label style="font-size:13px;">Upload Aadhaar Card (Max 2MB)</label>
+<input type="file" id="aadharUpload" onchange="validateFile(this, 'aadharStatus')">
+<div id="aadharStatus" style="font-size:12px;"></div>
+
+<br>
+
+<label style="font-size:13px;">Upload PAN Card (Max 2MB)</label>
+<input type="file" id="panUpload" onchange="validateFile(this, 'panStatus')">
+<div id="panStatus" style="font-size:12px;"></div>
+
+<button class="btn" onclick="nextStep(3)">
+Upload from Device & Continue
+</button>
+
+</div>
+
+<!-- STEP 3 -->
+<div class="step" id="step3">
+
+<h3>Bank & Address Details</h3>
+
+<input type="text" placeholder="Bank Account Number">
+<input type="text" placeholder="IFSC Code">
+<input type="text" placeholder="Residential Address">
+<input type="text" placeholder="City">
+<input type="text" placeholder="Pincode">
+
+<button class="btn" onclick="window.location.href='permissions.html'">
+Submit Application
+</button>
+
+</div>
+
+</div>
+
+<script>
+function nextStep(step) {
+    document.querySelectorAll(".step").forEach(s => s.classList.remove("active"));
+    document.getElementById("step" + step).classList.add("active");
+    document.getElementById("stepNumber").innerText = step;
+}
+</script>
+
+<script>
+function validateFile(input, statusId) {
+    let file = input.files[0];
+    let status = document.getElementById(statusId);
+
+    if(file) {
+        let sizeMB = file.size / (1024 * 1024);
+
+        if(sizeMB > 2) {
+            status.style.color = "red";
+            status.innerText = "File exceeds 2MB limit.";
+            input.value = "";
+        } else {
+            status.style.color = "green";
+            status.innerText = "File selected ✓";
+        }
+    }
+}
+</script>
+
+
+</body>
+</html>

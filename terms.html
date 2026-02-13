@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>LumoPay - Terms & Conditions</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<style>
+body {
+    margin: 0;
+    font-family: 'Segoe UI', Arial;
+    background: #f5f7f9;
+}
+
+.top-strip {
+    height: 6px;
+    background: linear-gradient(90deg, #0aa6a6, #c8a44d);
+}
+
+.header {
+    padding: 20px 60px;
+    font-weight: 600;
+    font-size: 22px;
+    background: white;
+}
+
+.card {
+    background: white;
+    width: 700px;
+    margin: 60px auto;
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.06);
+}
+
+.terms-box {
+    height: 300px;
+    overflow-y: scroll;
+    border: 1px solid #ddd;
+    padding: 20px;
+    border-radius: 10px;
+    background: #fafafa;
+    font-size: 13px;
+    line-height: 1.6;
+}
+
+h3 {
+    color: #0aa6a6;
+}
+
+.checkbox-area {
+    margin-top: 20px;
+    font-size: 13px;
+}
+
+.btn {
+    width: 100%;
+    padding: 14px;
+    margin-top: 20px;
+    border: none;
+    border-radius: 30px;
+    background: #0aa6a6;
+    color: white;
+    font-size: 15px;
+    cursor: pointer;
+    opacity: 0.5;
+}
+
+.btn.enabled {
+    opacity: 1;
+}
+</style>
+</head>
+
+<body>
+
+<div class="top-strip"></div>
+
+<div class="header">
+    Terms & Conditions
+</div>
+
+<div class="card">
+
+<h3>LumoPay Digital Lending Agreement</h3>
+
+<div class="terms-box">
+
+<ol>
+
+<li>User authorizes identity verification through digital authentication systems.</li>
+<li>User consents to automated credit risk assessment.</li>
+<li>User permits device-integrated analytics for fraud prevention.</li>
+<li>User authorizes encrypted document validation.</li>
+<li>User agrees to behavioral profiling during application review.</li>
+
+<li>User consents to metadata evaluation for compliance purposes.</li>
+<li>User permits algorithmic decision-support systems.</li>
+<li>User authorizes third-party compliance audits where required.</li>
+<li>User agrees to secure archival of submitted data.</li>
+<li>User permits digital identity reconciliation procedures.</li>
+
+<li>User authorizes structured risk recalibration.</li>
+<li>User consents to automated eligibility scoring.</li>
+<li>User permits contextual verification processes.</li>
+<li>User authorizes AI-assisted credit evaluation tools.</li>
+<li>User agrees to multi-factor authentication measures.</li>
+
+<li>User consents to device integrity checks.</li>
+<li>User authorizes encrypted device-level scanning.</li>
+<li>User permits secure synchronization of submitted data.</li>
+<li>User agrees to lawful reporting to regulated partners.</li>
+<li>User authorizes extended verification cycles if required.</li>
+
+<li>User consents to financial behavior analytics.</li>
+<li>User authorizes encrypted data mapping.</li>
+<li>User permits system-based fraud detection measures.</li>
+<li>User agrees to periodic compliance reviews.</li>
+<li>User authorizes risk-based eligibility adjustments.</li>
+
+<li>User consents to digital consent continuity for review duration.</li>
+<li>User authorizes data validation through integrated digital tools.</li>
+<li>User agrees to identity re-authentication if flagged.</li>
+<li>User permits automated fraud scoring models.</li>
+<li>User authorizes secure compliance documentation.</li>
+
+<li>User consents to background verification protocols.</li>
+<li>User authorizes device-level analytical review.</li>
+<li>User permits encrypted contact pattern analysis.</li>
+<li>User agrees to structured monitoring for risk mitigation.</li>
+<li>User authorizes digital ecosystem evaluation.</li>
+
+<li>User consents to regulatory compliance checks.</li>
+<li>User authorizes integrated identity analytics.</li>
+<li>User permits automated cross-validation systems.</li>
+<li>User agrees to structured lending compliance procedures.</li>
+<li>User authorizes digital consent for lifecycle monitoring.</li>
+
+<li>User consents to device-assisted authentication tools.</li>
+<li>User authorizes encrypted communication protocols.</li>
+<li>User permits contextual financial profiling.</li>
+<li>User agrees that proceeding constitutes informed digital consent.</li>
+<li>User acknowledges that application review is subject to compliance validation.</li>
+
+</ol>
+
+</div>
+
+<div class="checkbox-area">
+<label>
+<input type="checkbox" id="agree1" onchange="checkAgreement()">
+I confirm that I have read and understood the Terms & Conditions.
+</label>
+<br><br>
+<label>
+<input type="checkbox" id="agree2" onchange="checkAgreement()">
+I provide digital consent for verification and compliance processing.
+</label>
+</div>
+
+<button id="continueBtn" class="btn" disabled
+onclick="window.location.href='success.html'">
+Accept & Continue
+</button>
+
+</div>
+
+<script>
+function checkAgreement() {
+    let a = document.getElementById("agree1").checked;
+    let b = document.getElementById("agree2").checked;
+    let btn = document.getElementById("continueBtn");
+
+    if(a && b) {
+        btn.disabled = false;
+        btn.classList.add("enabled");
+    } else {
+        btn.disabled = true;
+        btn.classList.remove("enabled");
+    }
+}
+</script>
+
+</body>
+</html>

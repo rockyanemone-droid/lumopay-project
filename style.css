@@ -1,0 +1,124 @@
+body {
+    margin: 0;
+    font-family: 'Segoe UI', Arial;
+    background: #f5f7f9;
+    color: #222;
+}
+
+/* Top brand strip */
+.top-strip {
+    height: 6px;
+    background: linear-gradient(90deg, #0aa6a6, #c8a44d);
+}
+
+/* Header */
+.header {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 60px;
+    font-weight: 600;
+    font-size: 22px;
+    background: white;
+}
+
+/* Card container */
+.card {
+    background: white;
+    width: 460px;
+    margin: 60px auto;
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.06);
+}
+
+/* Inputs */
+input, select {
+    width: 100%;
+    padding: 12px;
+    margin-top: 12px;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+}
+
+/* Button */
+.btn {
+    width: 100%;
+    padding: 14px;
+    margin-top: 25px;
+    border: none;
+    border-radius: 30px;
+    background: #0aa6a6;
+    color: white;
+    font-size: 15px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.btn:hover {
+    background: #088c8c;
+}
+
+/* Gold badge */
+.badge {
+    display: inline-block;
+    background: #c8a44d;
+    color: white;
+    padding: 5px 12px;
+    font-size: 12px;
+    border-radius: 20px;
+    margin-bottom: 15px;
+}
+
+/* Floating coin animation */
+.coin {
+    position: fixed;
+    top: -50px;
+    width: 20px;
+    height: 20px;
+    background: radial-gradient(circle, #f4d47c, #c8a44d);
+    border-radius: 50%;
+    opacity: 0.4;
+    animation: fall 10s linear infinite;
+}
+
+@keyframes fall {
+    to {
+        transform: translateY(110vh);
+    }
+}
+
+
+/* Notification popup */
+.notification {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    background: white;
+    padding: 15px 20px;
+    border-radius: 10px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+    font-size: 13px;
+    color: #333;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: 0.5s ease;
+}
+
+.notification.show {
+    opacity: 1;
+    transform: translateY(0);
+} 
+
+.ad-box {
+    background: white;
+    padding: 15px;
+    margin-bottom: 20px;
+    border-radius: 12px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+    font-size: 13px;
+}
+
+.ad-box h4 {
+    margin: 0 0 8px 0;
+    color: #0aa6a6;
+}
